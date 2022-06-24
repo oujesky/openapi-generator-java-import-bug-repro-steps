@@ -1,0 +1,37 @@
+openapi: 3.0.1
+info:
+  title: Bug report
+  version: '1.0'
+paths:
+  /test/path:
+    get:
+      tags:
+        - Bug
+      operationId: buggedOperation
+      parameters:
+        - name: buggedParameter
+          in: query
+          required: true
+          explode: true
+          schema:
+            $ref: '#/components/schemas/BuggedParameterType'
+      responses:
+        200:
+          description: OK
+components:
+  schemas:
+    BuggedParameterBaseType:
+      type: object
+      properties:
+        x:
+          type: string
+        y:
+          type: string
+    BuggedParameterType:
+      allOf:
+        - $ref: '#/components/schemas/BuggedParameterBaseType'
+        - type: object
+          properties:
+            z:
+              type: string
+

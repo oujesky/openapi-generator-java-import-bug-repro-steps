@@ -1,0 +1,9 @@
+plugins {
+    id 'org.openapi.generator' version '6.0.0'
+}
+
+openApiGenerate {
+    inputSpec = "$rootDir/openapi.yml"
+    generatorName = 'java-micronaut-client'
+    outputDir = "$buildDir/openapi"
+}

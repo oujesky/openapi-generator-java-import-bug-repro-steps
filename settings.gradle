@@ -1,0 +1,4 @@
+rootProject.name = 'openapi-generator-bug'
+
+include 'openapi-generator-5.4.0'
+include 'openapi-generator-6.0.0'
